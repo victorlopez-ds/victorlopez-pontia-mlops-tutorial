@@ -46,13 +46,6 @@ jobs:
           test -f ./data/raw/adult.data
           test -f ./data/raw/adult.test
 
-      - name: Download Model
-        run: |
-          python scripts/download_model.py
-        env:
-          AZURE_TENANT_ID: ${{secrets.AZURE_TENANT_ID}}
-          AZURE_CLIENT_ID: ${{secrets.AZURE_CLIENT_ID}}
-          AZURE_CLIENT_SECRET: ${{secrets.AZURE_CLIENT_SECRET}}
 
       - name: Run tests and save exit code
         id: tests
