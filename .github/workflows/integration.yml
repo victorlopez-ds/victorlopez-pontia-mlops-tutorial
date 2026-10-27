@@ -3,7 +3,7 @@ name: Integration
 on:
   pull_request:
     branch: main
-    
+
 jobs:
   integrate:
     runs-on: ubuntu-latest
@@ -46,6 +46,16 @@ jobs:
 
           test -f ./data/raw/adult.data
           test -f ./data/raw/adult.test
+
+      - name: Download Model
+        run: |
+          python scripts/download_model.py
+        env:
+          AZURE_TENANT_ID: ${{secrets.AZURE_TENANT_ID}}
+          AZURE_CLIENT_ID: ${{secrets.AZURE_CLIENT_ID}}
+          AZURE_CLIENT_SECRET: ${{secrets.AZURE_CLIENT_SECRET}}
+          EXPERIMENT_NAME: ${{vars.EXPERIMENT_NAME}}
+          MLFLOW_URI: ${{vars.MLFLOW_URI}}
 
 
       - name: Run tests and save exit code
