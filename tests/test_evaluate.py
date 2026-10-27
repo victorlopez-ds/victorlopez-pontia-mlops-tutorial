@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from src.evaluate import evaluate
 
 def test_evaluate_logs(caplog):
-    # Create dummy data
+    # Create dummy data _
     X = np.random.rand(10, 4)
     y = np.random.randint(0, 2, size=10)
 
