@@ -12,6 +12,7 @@ load_dotenv()
 model = None
 
 # Hola, somos grupo 5 y vamos a hacer un pull request
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global model
