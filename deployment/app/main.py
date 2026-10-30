@@ -11,6 +11,7 @@ load_dotenv()
 
 model = None
 
+# Hola, somos grupo 5
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global model
