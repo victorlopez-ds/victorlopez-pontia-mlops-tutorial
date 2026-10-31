@@ -24,7 +24,7 @@ logger=logging.getLogger("adult-income")
 
 run_name = f"run-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
 
-# MLflow config
+# MLflow config hola!
 MLFLOW_URI =  os.getenv("MLFLOW_URI", "http://localhost:5000/")
 EXPERIMENT_NAME =  os.getenv("EXPERIMENT_NAME", "adult-income")
 
